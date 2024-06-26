@@ -1,8 +1,8 @@
 const express = require("express");
 // import express from "express"; -- ADD "type": "module" in package.json under main
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-dotenv.config();
+const mongoose = require("mongoose"); //for database
+const dotenv = require("dotenv"); //import dotenv after npm i dotenv
+dotenv.config(); //initialize the env file to be used when importing url link from .env file
 
 mongoose
   .connect(process.env.MONGO)
