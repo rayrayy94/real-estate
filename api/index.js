@@ -21,6 +21,17 @@ app.use(express.json()); // Allows json info to be sent to server, if not here, 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 
+// MIDDLEWARE TO HANDLE ERROR RESPONSE
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Internal Service Error";
+  return res.status(statusCode).json({
+    success: false,
+    statusCode,
+    message,
+  });
+});
+
 app.listen(3000, () => {
   console.log("Port is running on 3000");
 });
