@@ -17,9 +17,9 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamp: true } // Tells mongoDB to record time of creation of user and update of user
+  { timestamps: true } // Tells mongoDB to record time of creation of user and update of user
 );
 
 const User = mongoose.model("User", UserSchema);
 
-export default User;
+module.exports = User;
