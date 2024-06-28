@@ -4,4 +4,4 @@ const test = (req, res) => {
   });
 };
 
-module.exports = { test };
+export default test;

@@ -1,10 +1,12 @@
-const express = require("express");
+import express from "express";
 // import express from "express"; -- ADD "type": "module" in package.json under main
-const mongoose = require("mongoose"); //for database
-const dotenv = require("dotenv"); //import dotenv after npm i dotenv
+// const mongoose = require("mongoose"); //for database
+import mongoose from "mongoose";
+// const dotenv = require("dotenv"); //import dotenv after npm i dotenv
+import dotenv from "dotenv";
 dotenv.config(); //initialize the env file to be used when importing url link from .env file
-const userRouter = require("./routes/user.route.js");
-const authRouter = require("./routes/auth.route.js");
+import userRouter from "./routes/user.route.js";
+import authRouter from "./routes/auth.route.js";
 
 mongoose
   .connect(process.env.MONGO)
