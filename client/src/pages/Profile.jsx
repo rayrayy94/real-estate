@@ -21,6 +21,7 @@ export default function Profile() {
       handleFileUpload(file);
     }
   }, [file]);
+
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
     const fileName = new Date().getTime() + file.name;
@@ -45,6 +46,7 @@ export default function Profile() {
       }
     );
   };
+
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
@@ -75,6 +77,7 @@ export default function Profile() {
             ""
           )}
         </p>
+
         <input
           type="text"
           placeholder="username"

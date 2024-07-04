@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 dotenv.config(); //initialize the env file to be used when importing url link from .env file
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
+import cookieParser from "cookie-parser";
 
 mongoose
   .connect(process.env.MONGO)
@@ -19,6 +20,7 @@ mongoose
 
 const app = express();
 app.use(express.json()); // Allows json info to be sent to server, if not here, info will appear as undefined
+app.use(cookieParser());
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
